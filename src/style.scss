@@ -1,0 +1,178 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+// body {
+//     background-color: pink;
+// }
+// .w-152 {
+//     width: 36rem;
+// }
+// .h {
+//     height: 44rem;
+// }
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    width: 600px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.picture {
+    max-height: 400px;
+}
+
+.result {
+    @extend .no-scrollbar;
+    height: 450px;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+}
+
+.material-icons {
+    &.md-sm {
+        font-size: 18px;
+    }
+    &.md-md {
+        font-size: 24px;
+    }
+    &.md-xl {
+        font-size: 36px;
+    }
+    &.md-lg {
+        font-size: 48px;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(-50%, 100%, 0)
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(-50%)
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(-50%, -100%, 0)
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(-50%)
+    }
+}
+
+.pageUp-enter-active {
+    animation: fadeInUp .5s;
+}
+
+.pageUp-leave-active {
+    animation: fadeInUp .5s reverse;
+}
+
+.pageDown-enter-active {
+    animation: fadeInDown .5s;
+}
+
+.pageDown-leave-active {
+    animation: fadeInDown .5s reverse;
+}
+
+.next {
+    &-enter {
+        opacity: 0;
+        transform: translate3d(100%, -50%, 0);
+        &-to {
+            opacity: 1;
+            transform: translateZ(100%);
+        }
+    }
+    &-leave {
+        opacity: 1;
+        transform: translateZ(0%);
+        &-to {
+            opacity: 0;
+            transform: translateZ(0%);
+        }
+    }
+    &-enter-active,
+    &-leave-active {
+        transition: 0.3s;
+    }
+}
+
+.prev {
+    &-enter {
+        opacity: 0;
+        transform: translate3d(-150%, -50%, 0);
+        &-to {
+            opacity: 1;
+            transform: translateZ(-50%)
+        }
+    }
+    &-leave {
+        opacity: 1;
+        transform: translateZ(-50%);
+        &-to {
+            opacity: 0;
+            transform: translateZ(-50%);
+        }
+    }
+    &-enter-active,
+    &-leave-active {
+        transition: 0.3s;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop {
+    &-enter-active {
+        animation: pop 0.15s;
+    }
+    &-leave-active {
+        animation: pop 0.15s reverse;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade {
+    &-enter-active {
+        animation: fade 0.1s;
+    }
+    &-leave-active {
+        animation: fade 0.1s reverse;
+    }
+}
